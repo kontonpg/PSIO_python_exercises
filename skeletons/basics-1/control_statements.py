@@ -6,59 +6,37 @@
 #
 # -----------------------------------------------------------------------------
 
-
 def parity_str(n: int) -> str:
-    """Zwróć łańcuch znaków "parzysta" jeśli `n` jest liczbą parzystą, a w przeciwym
-    razie – zwróć łańcuch znaków "nieparzysta".
+  
+    if n%2==0:
+        return "parzysta"
+    return "nieparzysta"
 
-    W implementacji użyj wyrażenia warunkowego (ciało funkcji powinno składać się
-    z jednej instrukcji!).
-
-    Przykład: parity_str(2) => "parzysta", parity_str(3) => "nieparzysta"
-
-    :param n: liczba, której parzystość jest badana
-    :return: "parzysta" jeśli `n` jest liczbą parzystą, w przeciwym razie "nieparzysta"
-    """
     pass
 
 
 def plf(x: float) -> float:
-    """Funkcja realizuje funkcję matematyczną:
-            / 1   jeśli x < 3
-    f(x) = {  1.5 jeśli x ∈ [3, 10)
-            \ 4   jeśli x ≥ 10
+   
+    if x<3:
+        return 1
+    elif x>=10:
+        return 4
+    return 1.5
 
-    Przykład: plf(3) = 1.5, plf(10) = 4
-
-    :param x: liczba rzeczywista
-    :return: wartość funkcji f(x)
-    """
     pass
 
 
 def factorial(n: int) -> int:
-    """Oblicz silnię liczby.
-
-    W implementacji użyj pętli `for`. Przyjmij, że `n` jest zawsze większe
-    od 0 (nie musisz tego sprawdzać).
-
-    Przykład: factorial(3) = 6, factorial(4) = 24 itd.
-
-    :param n: liczba naturalna
-    :return: silnia liczby `n`
-    """
+    fact = 1
+    for i in range(1, n+1):
+        fact *= i
+    return fact
     pass
 
 
 def min_pow_2(n: int) -> int:
-    """Oblicz najmniejszą potęgę 2 większą od zadanej liczby naturalnej `n`.
-
-    W implementacji użyj pętli `while`. Przyjmij, że `n` jest zawsze większe
-    od 0 (nie musisz tego sprawdzać).
-
-    Przykład: min_pow_2(5) = 8, min_pow_2(8) = 16 itd.
-
-    :param n: liczba naturalna
-    :return: najmniejszą potęgę 2 większą od zadanej liczby całkowitej `n`
-    """
+    p = 1
+    while(n >= p):
+        p *= 2
+    return p
     pass

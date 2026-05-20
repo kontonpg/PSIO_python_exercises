@@ -8,21 +8,10 @@
 
 from typing import Dict, Any, List, Tuple, Optional, Set
 
-
 def dict_intro() -> None:
-    """Rozgrzewka: tworzenie i wypisywanie słownika.
-
-    Utwórz w jednej instrukcji słownik {str -> int} zawierający następujące
-    pary klucz-wartość: Adam=2, Bogdan=4, Cezary=1.
-    Następnie wypisz całą zawartość słownika, po jednym wpisie w każdym wierszu.
-
-    Przykładowo (kolejność wpisów może się różnić od poniższej):
-      Adam = 2
-      Bogdan = 4
-      Cezary = 1
-
-    (zob. "test" w pliku test/test_dict_intro.py)
-    """
+    slownik = {"Adam" : 2, "Bogdan" : 4, "Cezary" : 1}
+    for a in slownik:
+        print(a + "=" + str(slownik.get(a)))
     pass
 
 
@@ -37,6 +26,7 @@ def update_price(menu: Menu, dish: str) -> None:
     :param menu: menu, które należy zaktualizować
     :param dish: danie, którego cena powinna zostać zmieniona
     """
+    menu[dish] = menu[dish] + 50
     pass
 
 
@@ -55,6 +45,10 @@ def fix_key(dct: Dict[str, Any], incorrect_key: str, correct_key: str) -> Dict[s
     :param correct_key: poprawny klucz, który powinien zastąpić błędny klucz
     :return: poprawny słownik (KOPIA słownika wejściowego z poprawionym kluczem)
     """
+    dct2 = dct.copy()
+    if incorrect_key in dct2.keys():
+        incorrect_key=correct_key
+    return dct2
     pass
 
 
