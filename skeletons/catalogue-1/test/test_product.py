@@ -24,7 +24,10 @@ class TestProduct(unittest.TestCase):
     def test_eq(self):
         self.assertEqual(Product(id_="P1", name="", price=0), Product(id_="P1", name="", price=0))
         self.assertNotEqual(Product(id_="P1", name="X", price=0), Product(id_="P1", name="", price=0))
-
+        p1 = Product(id_="P1", name="", price=0)
+        p2 = Product(id_="P1", name="X", price=0)
+        self.assertTrue(p1.__eq__(p1))
+        self.assertFalse(p1.__eq__(p2))
 
 
 class TestProductOptional(unittest.TestCase):
